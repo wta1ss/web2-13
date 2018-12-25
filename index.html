@@ -1,1 +1,24 @@
-
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>web2-13</title>
+  </head>
+  <script type="text/javascript" src="ncmb.min.js" charset="utf-8"></script>
+  <script>
+    // mobile backendアプリとの連携
+    var ncmb = new NCMB("YOUR_APPLICATION_KEY","YOUR_CLIENT_KEY");
+    
+    // クラスのTestClassを作成
+    var TestClass = ncmb.DataStore("TestClass");
+    // データストアへの登録
+    var testClass = new TestClass();
+    testClass.set("message","Hello, NCMB!");
+    testClass.save();
+      .then(function(){
+        // 保存に成功した場合の処理
+      })
+      .catch(function(err){
+        // 保存に失敗した場合の処理
+      });
+  </script>
+</html>
